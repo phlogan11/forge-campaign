@@ -1,4 +1,4 @@
-const CACHE="forge-v03-cache-1";
+const CACHE="forge-v031-cache-1";
 const CORE=[
   "./",
   "./index.html",

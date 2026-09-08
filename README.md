@@ -1,25 +1,17 @@
-# Forge Campaign PWA v0.3
+# Forge Campaign PWA v0.3.1
 
-## Main fix
-v0.3 fixes the stale-update problem that required Ctrl+F5.
+Phase I programming refinement. Existing local XP, workout history, habits, baseline data, and inventory remain under the same storage key.
 
-### What changed
-- Network-first service worker instead of cache-first.
-- Cached files are now fallback/offline copies, not the first choice when online.
-- New service worker activates immediately.
-- Forge checks for updates when launched and when returning to the foreground.
-- If a newer worker takes control, Forge reloads itself once.
-- Small `v0.3` badge added to the top bar so the running build is obvious.
-- Existing local workout / XP / inventory data remains under the same storage key.
+Changes:
+- Monday: Back squat 4x6 @ RPE 7; added 2x8/side controlled step-downs.
+- Tuesday: Added Pallof press / anti-rotation core 3x10/side; SkiErg clarified as easy technique + aerobic work.
+- Wednesday: Zone 2 clarified as conversational effort.
+- Thursday: Romanian deadlift @ RPE 7; step-downs reduced to 2 sets; added lateral band walk / hip stability 3x10-12/side.
+- Saturday: 75-minute bike-preferred Zone 2 session; optional 4-6 controlled hill efforts only if knee/legs feel good.
+- Sunday: Easy walk explicitly optional; full rest is okay when fatigued.
+- Visible build badge: v0.3.1.
+- Cache bumped for clean deployment.
 
-## Upgrade the current GitHub Pages app
-Upload all 8 files in this package over the existing repository files and commit directly to `main`.
+This remains the Week 1 baseline version. Automatic multi-week progression is intentionally reserved for a later feature release after real training data is collected.
 
-After GitHub Pages finishes deploying:
-1. Do one final Ctrl+F5 on the desktop site to break free of the old v0.2 cache.
-2. Confirm the top bar says `v0.3`.
-3. On iPhone, fully close Forge and reopen it. If needed, open the URL in Safari once and refresh.
-4. From then on, future builds should update without repeated hard refreshes.
-
-## Data warning
-Training history is still device-local. Cloud backup/login remains the next infrastructure priority.
+Deploy by uploading all 8 files over the existing GitHub repo files and committing to main.

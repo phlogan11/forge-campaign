@@ -2,23 +2,23 @@ const STORAGE_KEY="forgeCampaign_v01";
 
 const plans=[
  {day:"Sunday",title:"Recovery",meta:"Sleep • Mobility • Easy walk",exercises:[
-   {name:"Easy walk",sets:1,reps:"20–40 min"},{name:"Mobility",sets:1,reps:"10–15 min"}]},
+   {name:"Optional easy walk — full rest is okay if fatigued",sets:1,reps:"20–40 min"},{name:"Mobility",sets:1,reps:"10–15 min"}]},
  {day:"Monday",title:"Lower A — Chassis",meta:"~70 min • Strength + Durability",exercises:[
-   {name:"Back squat",sets:4,reps:"6"},{name:"Reverse sled",sets:5,reps:"1 trip"},{name:"Split squat",sets:3,reps:"8/side"},
-   {name:"Hamstring curl",sets:3,reps:"10"},{name:"Calf raise",sets:4,reps:"12"},{name:"Mobility",sets:1,reps:"8 min"}]},
+   {name:"Back squat — RPE 7",sets:4,reps:"6"},{name:"Reverse sled",sets:5,reps:"1 trip"},{name:"Split squat",sets:3,reps:"8/side"},
+   {name:"Controlled step-down",sets:2,reps:"8/side"},{name:"Hamstring curl",sets:3,reps:"10"},{name:"Calf raise",sets:4,reps:"12"},{name:"Mobility",sets:1,reps:"8 min"}]},
  {day:"Tuesday",title:"Upper A + SkiErg",meta:"~65 min • Physique + Ski Engine",exercises:[
    {name:"Incline press",sets:4,reps:"8"},{name:"Lat pulldown / pull-up",sets:4,reps:"8–10"},{name:"Lateral raise",sets:4,reps:"12–15"},
-   {name:"Row",sets:3,reps:"10"},{name:"Triceps",sets:3,reps:"10–12"},{name:"SkiErg",sets:1,reps:"10–20 min easy"}]},
+   {name:"Row",sets:3,reps:"10"},{name:"Triceps",sets:3,reps:"10–12"},{name:"Pallof press / anti-rotation core",sets:3,reps:"10/side"},{name:"SkiErg — technique + aerobic",sets:1,reps:"10–20 min easy"}]},
  {day:"Wednesday",title:"Zone 2 + Mobility",meta:"45–60 min • Engine + Recovery",exercises:[
-   {name:"Zone 2 bike/run/elliptical",sets:1,reps:"45–60 min"},{name:"Mobility",sets:1,reps:"10 min"}]},
+   {name:"Zone 2 bike/run/elliptical — conversational effort",sets:1,reps:"45–60 min"},{name:"Mobility",sets:1,reps:"10 min"}]},
  {day:"Thursday",title:"Lower B — Posterior + Unilateral",meta:"~70 min • Strength + Durability",exercises:[
-   {name:"Romanian deadlift",sets:4,reps:"6–8"},{name:"Step-up",sets:3,reps:"8/side"},{name:"Leg press",sets:3,reps:"10"},
-   {name:"Controlled step-down",sets:3,reps:"8/side"},{name:"Hamstring curl",sets:3,reps:"10"},{name:"Calf raise",sets:4,reps:"12"}]},
+   {name:"Romanian deadlift — RPE 7",sets:4,reps:"6–8"},{name:"Step-up",sets:3,reps:"8/side"},{name:"Leg press",sets:3,reps:"10"},
+   {name:"Controlled step-down",sets:2,reps:"8/side"},{name:"Hamstring curl",sets:3,reps:"10"},{name:"Lateral band walk / hip stability",sets:3,reps:"10–12/side"},{name:"Calf raise",sets:4,reps:"12"}]},
  {day:"Friday",title:"Upper B + SkiErg",meta:"~65 min • Physique + Ski Engine",exercises:[
    {name:"Overhead press",sets:4,reps:"6–8"},{name:"Chest-supported row",sets:4,reps:"8–10"},{name:"Upper chest press",sets:3,reps:"10"},
    {name:"Rear delt fly",sets:4,reps:"12–15"},{name:"Biceps",sets:3,reps:"10–12"},{name:"SkiErg intervals",sets:6,reps:"2 min / 2 min easy"}]},
  {day:"Saturday",title:"Long Aerobic / Bike / Hills",meta:"60–120 min • Engine + Mountain",exercises:[
-   {name:"Long aerobic session",sets:1,reps:"60–120 min"},{name:"Optional hill work",sets:1,reps:"controlled"}]}
+   {name:"Bike preferred — Zone 2 / conversational",sets:1,reps:"75 min"},{name:"Optional hill efforts — only if knee/legs feel good",sets:1,reps:"4–6 controlled"}]}
 ];
 
 const defaultState={
