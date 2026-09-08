@@ -1,51 +1,31 @@
-# Forge Campaign PWA v0.1
+# Forge Campaign PWA v0.2
 
-Player One Edition — built for the Mt. Taylor 2027 campaign.
+## New in v0.2
+- Real workout logging
+- Day-specific Phase I workout selection
+- Set-by-set weight and reps/time logging
+- Knee pain before/after workout
+- Workout notes
+- Workout history
+- "Open Workout Log" from Today
+- Quest completion saves the workout and awards XP once
+- Character stats automatically advance by workout type
+- Existing v0.1 local data is preserved because the same localStorage key is used
+- Service worker cache bumped to v0.2
 
-## What works now
-- Installable PWA shell
-- Today dashboard
-- Mt. Taylor countdown
-- XP / level progression
-- Daily habits with XP
-- Quest completion
-- Phase I weekly plan
-- Character stats
-- Baseline bodyweight / waist / knee-pain notes
-- Character Inventory with item statuses
-- Campaign roadmap
-- Local browser storage
-- Offline asset caching after first load
+## Update your live GitHub Pages app
+Replace these files in your existing repository:
+- index.html
+- styles.css
+- app.js
+- manifest.webmanifest
+- service-worker.js
+- icon-192.png
+- icon-512.png
 
-## Easiest Windows deployment: GitHub Pages
+README.md can also be replaced, but it does not affect the app.
 
-1. Create a free GitHub account if you do not already have one.
-2. Create a new repository, for example `forge-campaign`.
-3. Upload every file and folder from this package to the repository root.
-4. In the repository, open Settings -> Pages.
-5. Under Build and deployment, choose "Deploy from a branch".
-6. Select the `main` branch and `/ (root)` folder, then Save.
-7. GitHub will give you an HTTPS address for the site.
+After GitHub Pages redeploys, open Forge and refresh once. If the Home Screen app still shows the old version, fully close Forge and reopen it; the updated service worker should take over.
 
-HTTPS matters because service workers / PWA behavior require a secure context when hosted.
-
-## Install on iPhone
-
-1. Open the deployed Forge URL in Safari on the iPhone.
-2. Tap Share.
-3. Choose Add to Home Screen.
-4. Confirm Add / Open as Web App if prompted.
-5. Launch Forge from its icon.
-
-## Important v0.1 limitation
-Your data is stored locally in that browser/web-app installation. Clearing Safari website data, deleting the web app, or moving to another phone can lose the current data.
-
-The next major upgrade should be cloud backup/login so the campaign survives device changes.
-
-## Files
-- index.html — application structure
-- styles.css — mobile-first interface
-- app.js — XP, habits, local data, tabs, inventory
-- manifest.webmanifest — installable-app metadata
-- service-worker.js — basic offline cache
-- icons/ — app icons
+## Important
+Data is still stored only on the device/browser. Cloud backup/login is the next infrastructure priority before months of history accumulate.

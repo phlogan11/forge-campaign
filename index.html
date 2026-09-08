@@ -14,140 +14,164 @@
   <title>Forge Campaign</title>
 </head>
 <body>
-  <div id="app">
-    <header class="topbar">
-      <div>
-        <div class="eyebrow">FORGE PERFORMANCE</div>
-        <h1>Mt. Taylor Campaign</h1>
+<div id="app">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">FORGE PERFORMANCE</div>
+      <h1>Mt. Taylor Campaign</h1>
+    </div>
+    <div class="level-pill">LV <span id="levelValue">1</span></div>
+  </header>
+
+  <main>
+    <section id="screen-today" class="screen active">
+      <div class="hero card">
+        <div>
+          <div class="eyebrow">BOSS FIGHT</div>
+          <h2>Mt. Taylor Winter Quadrathlon</h2>
+          <p>Soloist • February 13, 2027</p>
+        </div>
+        <div class="boss-count"><strong id="daysLeft">—</strong><span>DAYS</span></div>
       </div>
-      <div class="level-pill">LV <span id="levelValue">1</span></div>
-    </header>
 
-    <main>
-      <section id="screen-today" class="screen active">
-        <div class="hero card">
+      <section class="card">
+        <div class="row between">
+          <div><div class="eyebrow">CHARACTER XP</div><h3 id="xpText">0 XP</h3></div>
+          <div class="muted" id="levelProgressText">0 / 1000</div>
+        </div>
+        <div class="progress"><div id="xpBar"></div></div>
+      </section>
+
+      <section class="card">
+        <div class="eyebrow">TODAY'S QUEST</div>
+        <h2 id="todayQuestName">—</h2>
+        <p class="muted" id="todayQuestMeta">—</p>
+        <div id="todayExercises" class="exercise-list"></div>
+        <button id="openWorkoutBtn" class="secondary">Open Workout Log</button>
+        <button id="completeQuestBtn" class="primary gap-top">Complete Quest +100 XP</button>
+        <div id="questStatus" class="success"></div>
+      </section>
+
+      <section class="card">
+        <div class="eyebrow">DAILY FUNDAMENTALS</div>
+        <div class="habit-grid">
+          <label class="habit"><span>💧 Hydrate</span><input type="checkbox" data-habit="hydrate" data-xp="25"></label>
+          <label class="habit"><span>🥩 Fuel</span><input type="checkbox" data-habit="fuel" data-xp="25"></label>
+          <label class="habit"><span>😴 Sleep</span><input type="checkbox" data-habit="sleep" data-xp="25"></label>
+          <label class="habit"><span>🧘 Recover</span><input type="checkbox" data-habit="recover" data-xp="20"></label>
+          <label class="habit"><span>⏰ 5 AM</span><input type="checkbox" data-habit="fiveam" data-xp="25"></label>
+        </div>
+        <div class="today-xp">Today's XP: <strong id="todayXpValue">0</strong></div>
+      </section>
+    </section>
+
+    <section id="screen-training" class="screen">
+      <div class="section-head">
+        <div class="eyebrow">PHASE I</div>
+        <h2>Build the Chassis</h2>
+        <p>Log the work. Build the record. Earn the XP.</p>
+      </div>
+
+      <section class="card" id="workoutLogger">
+        <div class="row between">
           <div>
-            <div class="eyebrow">BOSS FIGHT</div>
-            <h2>Mt. Taylor Winter Quadrathlon</h2>
-            <p>Soloist • February 13, 2027</p>
+            <div class="eyebrow">WORKOUT LOG</div>
+            <h2 id="loggerTitle">—</h2>
           </div>
-          <div class="boss-count">
-            <strong id="daysLeft">—</strong>
-            <span>DAYS</span>
-          </div>
+          <div class="date-badge" id="loggerDate">—</div>
         </div>
 
-        <section class="card">
-          <div class="row between">
-            <div>
-              <div class="eyebrow">CHARACTER XP</div>
-              <h3 id="xpText">0 XP</h3>
-            </div>
-            <div class="muted" id="levelProgressText">0 / 1000</div>
-          </div>
-          <div class="progress"><div id="xpBar"></div></div>
-        </section>
-
-        <section class="card">
-          <div class="eyebrow">TODAY'S QUEST</div>
-          <h2 id="todayQuestName">Lower A — Chassis</h2>
-          <p class="muted" id="todayQuestMeta">~70 min • Strength + Durability</p>
-          <div id="todayExercises" class="exercise-list"></div>
-          <button id="completeQuestBtn" class="primary">Complete Quest +100 XP</button>
-          <div id="questStatus" class="success"></div>
-        </section>
-
-        <section class="card">
-          <div class="eyebrow">DAILY FUNDAMENTALS</div>
-          <div class="habit-grid">
-            <label class="habit"><span>💧 Hydrate</span><input type="checkbox" data-habit="hydrate" data-xp="25"></label>
-            <label class="habit"><span>🥩 Fuel</span><input type="checkbox" data-habit="fuel" data-xp="25"></label>
-            <label class="habit"><span>😴 Sleep</span><input type="checkbox" data-habit="sleep" data-xp="25"></label>
-            <label class="habit"><span>🧘 Recover</span><input type="checkbox" data-habit="recover" data-xp="20"></label>
-            <label class="habit"><span>⏰ 5 AM</span><input type="checkbox" data-habit="fiveam" data-xp="25"></label>
-          </div>
-          <div class="today-xp">Today's XP: <strong id="todayXpValue">0</strong></div>
-        </section>
-      </section>
-
-      <section id="screen-training" class="screen">
-        <div class="section-head">
-          <div class="eyebrow">PHASE I</div>
-          <h2>Build the Chassis</h2>
-          <p>60% lower • 40% upper • knee capacity • aerobic base • SkiErg technique</p>
-        </div>
-        <div id="weekPlan" class="stack"></div>
-      </section>
-
-      <section id="screen-character" class="screen">
-        <div class="section-head">
-          <div class="eyebrow">PLAYER ONE</div>
-          <h2>Character Sheet</h2>
-          <p>Stats rise as the work gets done.</p>
-        </div>
-        <div id="statList" class="stack"></div>
-        <section class="card">
-          <div class="eyebrow">BASELINE NOTES</div>
-          <label class="field">Bodyweight <input id="weightInput" inputmode="decimal" placeholder="lb"></label>
-          <label class="field">Waist <input id="waistInput" inputmode="decimal" placeholder="in"></label>
-          <label class="field">Knee pain today <input id="kneeInput" inputmode="numeric" placeholder="0–10"></label>
-          <button id="saveBaselineBtn" class="secondary">Save Baseline</button>
-        </section>
-      </section>
-
-      <section id="screen-inventory" class="screen">
-        <div class="section-head">
-          <div class="eyebrow">CHARACTER INVENTORY</div>
-          <h2>Race Loadout</h2>
-          <p>Buying it is not enough. Test it in training.</p>
-        </div>
-        <div id="inventoryList" class="stack"></div>
-        <form id="addGearForm" class="card">
-          <div class="eyebrow">ADD ITEM</div>
-          <label class="field">Gear <input id="gearNameInput" required placeholder="e.g. winter running shoes"></label>
-          <label class="field">Status
-            <select id="gearStatusInput">
-              <option>Needed</option>
-              <option>Acquired</option>
-              <option>Tested</option>
-              <option>Race Ready</option>
-            </select>
+        <div class="knee-row">
+          <label class="field compact">Knee before
+            <input id="kneeBefore" inputmode="decimal" placeholder="0–10">
           </label>
-          <button class="secondary" type="submit">Add to Inventory</button>
-        </form>
+          <label class="field compact">Knee after
+            <input id="kneeAfter" inputmode="decimal" placeholder="0–10">
+          </label>
+        </div>
+
+        <div id="loggerExercises" class="stack"></div>
+
+        <label class="field">Workout notes
+          <textarea id="workoutNotes" rows="3" placeholder="How did it feel? Anything to remember next time?"></textarea>
+        </label>
+
+        <button id="saveWorkoutBtn" class="secondary">Save Workout Log</button>
+        <div id="saveWorkoutStatus" class="success"></div>
       </section>
 
-      <section id="screen-campaign" class="screen">
-        <div class="section-head">
-          <div class="eyebrow">CAMPAIGN MAP</div>
-          <h2>Mt. Taylor 2027</h2>
-          <p>Race entry: $150 • Working target: sub-7:15</p>
-        </div>
-        <div class="timeline">
-          <div class="phase active-phase"><span>01</span><div><strong>Build the Chassis</strong><small>Sep–Oct • Strength, knees, habits</small></div></div>
-          <div class="phase"><span>02</span><div><strong>Build the Engine</strong><small>Oct–Nov • Bike, run, Zone 2, bricks</small></div></div>
-          <div class="phase"><span>03</span><div><strong>Become a Quad Athlete</strong><small>Dec–Jan • Ski, snowshoe, cold weather</small></div></div>
-          <div class="phase"><span>04</span><div><strong>Peak</strong><small>January • Race-specific rehearsals</small></div></div>
-          <div class="phase"><span>05</span><div><strong>Taper</strong><small>Feb 1–12 • Fresh legs, tested gear</small></div></div>
-          <div class="phase boss"><span>☠️</span><div><strong>Boss Fight</strong><small>Feb 13, 2027 • Mt. Taylor Solo</small></div></div>
-        </div>
-        <section class="card locked">
-          <div class="eyebrow">NEXT CAMPAIGN</div>
-          <h3>🔒 The Tactical Games</h3>
-          <p class="muted">Unlocks after Mt. Taylor.</p>
-        </section>
+      <div class="eyebrow section-label">THIS WEEK</div>
+      <div id="weekPlan" class="stack"></div>
+
+      <div class="eyebrow section-label">WORKOUT HISTORY</div>
+      <div id="historyList" class="stack"></div>
+    </section>
+
+    <section id="screen-character" class="screen">
+      <div class="section-head">
+        <div class="eyebrow">PLAYER ONE</div>
+        <h2>Character Sheet</h2>
+        <p>Stats rise as the work gets done.</p>
+      </div>
+      <div id="statList" class="stack"></div>
+      <section class="card">
+        <div class="eyebrow">BASELINE NOTES</div>
+        <label class="field">Bodyweight <input id="weightInput" inputmode="decimal" placeholder="lb"></label>
+        <label class="field">Waist <input id="waistInput" inputmode="decimal" placeholder="in"></label>
+        <label class="field">Knee pain today <input id="kneeInput" inputmode="numeric" placeholder="0–10"></label>
+        <button id="saveBaselineBtn" class="secondary">Save Baseline</button>
       </section>
-    </main>
+    </section>
 
-    <nav class="tabbar" aria-label="Primary">
-      <button class="tab active" data-screen="today">Today</button>
-      <button class="tab" data-screen="training">Training</button>
-      <button class="tab" data-screen="character">Character</button>
-      <button class="tab" data-screen="inventory">Inventory</button>
-      <button class="tab" data-screen="campaign">Campaign</button>
-    </nav>
-  </div>
+    <section id="screen-inventory" class="screen">
+      <div class="section-head">
+        <div class="eyebrow">CHARACTER INVENTORY</div>
+        <h2>Race Loadout</h2>
+        <p>Buying it is not enough. Test it in training.</p>
+      </div>
+      <div id="inventoryList" class="stack"></div>
+      <form id="addGearForm" class="card">
+        <div class="eyebrow">ADD ITEM</div>
+        <label class="field">Gear <input id="gearNameInput" required placeholder="e.g. winter running shoes"></label>
+        <label class="field">Status
+          <select id="gearStatusInput">
+            <option>Needed</option><option>Acquired</option><option>Tested</option><option>Race Ready</option>
+          </select>
+        </label>
+        <button class="secondary" type="submit">Add to Inventory</button>
+      </form>
+    </section>
 
-  <script src="app.js"></script>
+    <section id="screen-campaign" class="screen">
+      <div class="section-head">
+        <div class="eyebrow">CAMPAIGN MAP</div>
+        <h2>Mt. Taylor 2027</h2>
+        <p>Race entry: $150 • Working target: sub-7:15</p>
+      </div>
+      <div class="timeline">
+        <div class="phase active-phase"><span>01</span><div><strong>Build the Chassis</strong><small>Sep–Oct • Strength, knees, habits</small></div></div>
+        <div class="phase"><span>02</span><div><strong>Build the Engine</strong><small>Oct–Nov • Bike, run, Zone 2, bricks</small></div></div>
+        <div class="phase"><span>03</span><div><strong>Become a Quad Athlete</strong><small>Dec–Jan • Ski, snowshoe, cold weather</small></div></div>
+        <div class="phase"><span>04</span><div><strong>Peak</strong><small>January • Race-specific rehearsals</small></div></div>
+        <div class="phase"><span>05</span><div><strong>Taper</strong><small>Feb 1–12 • Fresh legs, tested gear</small></div></div>
+        <div class="phase boss"><span>☠️</span><div><strong>Boss Fight</strong><small>Feb 13, 2027 • Mt. Taylor Solo</small></div></div>
+      </div>
+      <section class="card locked">
+        <div class="eyebrow">NEXT CAMPAIGN</div>
+        <h3>🔒 The Tactical Games</h3>
+        <p class="muted">Unlocks after Mt. Taylor.</p>
+      </section>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Primary">
+    <button class="tab active" data-screen="today">Today</button>
+    <button class="tab" data-screen="training">Training</button>
+    <button class="tab" data-screen="character">Character</button>
+    <button class="tab" data-screen="inventory">Inventory</button>
+    <button class="tab" data-screen="campaign">Campaign</button>
+  </nav>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
