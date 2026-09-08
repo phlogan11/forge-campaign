@@ -36,3 +36,7 @@ h2,h3{margin:.25rem 0}.progress{height:10px;background:#0c121b;border-radius:999
 .tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:20;width:min(760px,100%);display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(12,18,27,.97);backdrop-filter:blur(18px);border-top:1px solid var(--line)}
 .tab{background:transparent;border:0;color:var(--muted);min-height:48px;border-radius:12px;font-size:12px}.tab.active{background:var(--panel2);color:var(--text);font-weight:800}
 @media(max-width:420px){.exercise-list{grid-template-columns:1fr}.habit-grid{grid-template-columns:1fr}.hero h2{font-size:21px}.gear-card{align-items:flex-start;flex-direction:column}.gear-actions{width:100%}.gear-actions select{flex:1}.set-grid{grid-template-columns:44px 1fr 1fr}}
+
+.top-actions{display:flex;align-items:center;gap:8px}
+.version-chip{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--muted);border:1px solid var(--line);background:#0c121b;border-radius:999px;padding:7px 9px}
+.update-toast{position:fixed;left:50%;bottom:calc(78px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:40;background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:10px 14px;font-size:13px;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,.35)}

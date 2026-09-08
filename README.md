@@ -1,31 +1,25 @@
-# Forge Campaign PWA v0.2
+# Forge Campaign PWA v0.3
 
-## New in v0.2
-- Real workout logging
-- Day-specific Phase I workout selection
-- Set-by-set weight and reps/time logging
-- Knee pain before/after workout
-- Workout notes
-- Workout history
-- "Open Workout Log" from Today
-- Quest completion saves the workout and awards XP once
-- Character stats automatically advance by workout type
-- Existing v0.1 local data is preserved because the same localStorage key is used
-- Service worker cache bumped to v0.2
+## Main fix
+v0.3 fixes the stale-update problem that required Ctrl+F5.
 
-## Update your live GitHub Pages app
-Replace these files in your existing repository:
-- index.html
-- styles.css
-- app.js
-- manifest.webmanifest
-- service-worker.js
-- icon-192.png
-- icon-512.png
+### What changed
+- Network-first service worker instead of cache-first.
+- Cached files are now fallback/offline copies, not the first choice when online.
+- New service worker activates immediately.
+- Forge checks for updates when launched and when returning to the foreground.
+- If a newer worker takes control, Forge reloads itself once.
+- Small `v0.3` badge added to the top bar so the running build is obvious.
+- Existing local workout / XP / inventory data remains under the same storage key.
 
-README.md can also be replaced, but it does not affect the app.
+## Upgrade the current GitHub Pages app
+Upload all 8 files in this package over the existing repository files and commit directly to `main`.
 
-After GitHub Pages redeploys, open Forge and refresh once. If the Home Screen app still shows the old version, fully close Forge and reopen it; the updated service worker should take over.
+After GitHub Pages finishes deploying:
+1. Do one final Ctrl+F5 on the desktop site to break free of the old v0.2 cache.
+2. Confirm the top bar says `v0.3`.
+3. On iPhone, fully close Forge and reopen it. If needed, open the URL in Safari once and refresh.
+4. From then on, future builds should update without repeated hard refreshes.
 
-## Important
-Data is still stored only on the device/browser. Cloud backup/login is the next infrastructure priority before months of history accumulate.
+## Data warning
+Training history is still device-local. Cloud backup/login remains the next infrastructure priority.

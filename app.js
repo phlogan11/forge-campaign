@@ -166,8 +166,34 @@ function setupEvents(){
  saveBaselineBtn.addEventListener("click",()=>{state.baseline.weight=weightInput.value.trim();state.baseline.waist=waistInput.value.trim();state.baseline.knee=kneeInput.value.trim();save();saveBaselineBtn.textContent="Saved ✓";setTimeout(()=>saveBaselineBtn.textContent="Save Baseline",1200)});
  addGearForm.addEventListener("submit",e=>{e.preventDefault();const name=gearNameInput.value.trim();if(!name)return;state.inventory.push({name,status:gearStatusInput.value});gearNameInput.value="";save();renderInventory()})
 }
+async function registerForgeServiceWorker(){
+ if(!("serviceWorker" in navigator)) return;
+ const hadController=!!navigator.serviceWorker.controller;
+ try{
+   const reg=await navigator.serviceWorker.register("./service-worker.js",{updateViaCache:"none"});
+   reg.update().catch(()=>{});
+
+   let reloading=false;
+   navigator.serviceWorker.addEventListener("controllerchange",()=>{
+     if(!hadController || reloading) return;
+     reloading=true;
+     const toast=document.createElement("div");
+     toast.className="update-toast";
+     toast.textContent="Forge updated — loading newest build…";
+     document.body.appendChild(toast);
+     setTimeout(()=>location.reload(),350);
+   });
+
+   // Re-check when the app returns to the foreground.
+   document.addEventListener("visibilitychange",()=>{
+     if(document.visibilityState==="visible") reg.update().catch(()=>{});
+   });
+ }catch(e){
+   console.warn("Forge service worker registration failed",e);
+ }
+}
 function init(){
  resetDailyIfNeeded();save();renderCountdown();renderHeader();renderQuest();renderHabits();renderTraining();renderLogger();renderStats();renderInventory();setupEvents();
- if("serviceWorker" in navigator)navigator.serviceWorker.register("./service-worker.js").catch(()=>{})
+ registerForgeServiceWorker();
 }
 init();
